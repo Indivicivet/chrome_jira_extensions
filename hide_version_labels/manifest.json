@@ -1,0 +1,21 @@
+{
+	"manifest_version": 3,
+	"name": "Hide Version Labels",
+	"description": "hide version labels from backlog view in jira",
+	"version": "0.1",
+	"action": {
+		"default_icon": "hide_version_labels.png"
+	},
+	"content_scripts": [
+		{
+			"js": ["hide.js"],
+			"matches": [
+				"https://*.atlassian.net/*backlog*"
+			]
+		}
+	],
+	"background": {
+		"service_worker": "toggle_hidden.js"
+	},
+	"permissions": ["storage"]
+}
